@@ -1,7 +1,7 @@
 # spa/hosting_and_cdnlog_buckets
 
 resource "aws_s3_bucket" "origin" {
-  region        = "eu-central-1"
+  region        = "us-east-1"
   bucket        = "${local.origin_bucket}"
   acl           = "private"
   force_destroy = "${var.force_destroy}"
