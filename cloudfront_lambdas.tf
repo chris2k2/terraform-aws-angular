@@ -1,6 +1,7 @@
 # spa/cloudfront_lambda
 
 resource "aws_lambda_function" "origin_request" {
+  provider = "aws.east"
   function_name    = "${local.hosted_zone_dash}-origin-request"
   filename         = "${data.archive_file.origin_request.output_path}"
   source_code_hash = "${data.archive_file.origin_request.output_base64sha256}"
@@ -13,6 +14,7 @@ resource "aws_lambda_function" "origin_request" {
 }
 
 resource "aws_lambda_function" "origin_response" {
+  provider = "aws.east"
   function_name    = "${local.hosted_zone_dash}-origin-response"
   filename         = "${data.archive_file.origin_response.output_path}"
   source_code_hash = "${data.archive_file.origin_response.output_base64sha256}"
@@ -25,6 +27,7 @@ resource "aws_lambda_function" "origin_response" {
 }
 
 resource "aws_lambda_function" "viewer_response" {
+  provider = "aws.east"
   function_name    = "${local.hosted_zone_dash}-viewer-response"
   filename         = "${data.archive_file.viewer_response.output_path}"
   source_code_hash = "${data.archive_file.viewer_response.output_base64sha256}"
