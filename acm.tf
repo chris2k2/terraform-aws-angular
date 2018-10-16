@@ -5,7 +5,6 @@ data "aws_route53_zone" "zone" {
 }
 
 resource "aws_acm_certificate" "cert" {
-  provider = "east"
   domain_name               = "*.${var.hosted_zone}"
   subject_alternative_names = ["${var.hosted_zone}"]
   validation_method         = "DNS"
