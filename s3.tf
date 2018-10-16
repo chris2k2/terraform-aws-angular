@@ -2,7 +2,7 @@
 
 resource "aws_s3_bucket" "origin" {
   region        = "us-east-1"
-  bucket        = "${local.origin_bucket}"
+  bucket        = "${local.origin_bucket}2"
   acl           = "private"
   force_destroy = "${var.force_destroy}"
 
@@ -20,7 +20,7 @@ resource "aws_s3_bucket" "origin" {
 
 resource "aws_s3_bucket" "log" {
   region        = "${local.region}"
-  bucket        = "${local.log_bucket}"
+  bucket        = "${local.log_bucket}2"
   acl           = "log-delivery-write"
   force_destroy = "${var.force_destroy}"
 }
